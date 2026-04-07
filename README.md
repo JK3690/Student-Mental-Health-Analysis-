@@ -1,10 +1,16 @@
+<img width="2560" height="1440" alt="banner" src="https://github.com/user-attachments/assets/ad1cb76b-4388-4ec7-9534-d206813653f1" />
+
 # Student-Analysis-Project
 Student Performance Analysis using CSV, Python & SQL.
 
-Description
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+## Description
 * A Python + MySQL project that analyzes student mental health data and visualizes insights using matplotlib.
 
-Features
+## Features
 * Store CSV data into MySQL
 * Add, modify, delete student records
   
@@ -16,23 +22,23 @@ Features
   * Pie chart of mental health issues
   * Distribution graphs
 
-Tech Used
+## Tech Used
 * Python
 * MySQL
 * Matplotlib
 * CSV
 
-Requirements
+## Requirements
 * pip install mysql-connector-python matplotlib
 
-How to Run
+## How to Run
 1. Install dependencies:
    pip install mysql-connector-python matplotlib
 2. Update MySQL credentials in database.py
 3. Run:
    python main.py
 
-Outputs
+## Outputs
 ### Pie Chart
 <img width="635" height="546" alt="pie" src="https://github.com/user-attachments/assets/81d90590-288c-4236-a322-9e3d7be91dea" />
 
@@ -43,5 +49,6 @@ Outputs
 * GUI interface
 * Better data validation
 * More advanced analytics
+
 
 
