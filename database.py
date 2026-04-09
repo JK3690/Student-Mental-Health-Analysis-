@@ -52,7 +52,10 @@ def avg_w_mhi():
     mhi = clean_input("Enter mental health issue: ")
     result = run_query(f"SELECT AVG(Age) FROM student_mental_health WHERE {mhi}='Yes';",
         fetch=True)
-    print(f"Average age with {mhi}: {result[0][0]}")
+   if result:
+        print(f"Average age with {mhi}: {result[0]}")
+    else:
+        print("No data found")
     
 def count_w_mhi():
   mhi = clean_input("Enter mental health issue: ")
