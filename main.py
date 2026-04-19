@@ -1,9 +1,9 @@
 #Importing required modules
-import matplotlib.pyplot as plt
-from database import *
+from database import (filename, config, convert, run_query, clean_input, cgpa_clean, insights)
 from visualization import *
 
 convert(filename, **config)
+
     
 #defining queries in menu
 def disp_all(): #Display all records
@@ -42,24 +42,18 @@ def delete_rec(): #Delete record
     value = clean_input("Value: ")
     run_query(f"DELETE FROM student_mental_health WHERE {field}=%s;", (value,))
 
-
 while True:
     print("""Student Mental Health Analysis 📈 \n
--KEY- \n Fields = Gender / Age/ CGPA/ Year of Study/ Course \n MHI = Particular Mental Health Issue (Depression/Anxiety/Panic Attack) \n
-~MENU~ \n 1. Display all records \n 2. Add record \n 3. Modify record(s) \n 4. Delete record(s) \n
-~QUERIES~ \n 5. Average Age of students with MHI \n 6. Count students with MHI \n 7. MHI by Fields \n 8. Distribution by Fields \n 9. Exit""")
+-KEY- \n Fields = Gender/Age/CGPA(o/Year of Study/Course \n MHI = Particular Mental Health Issue (Depression/Anxiety/Panic_attack) \n
+~MENU~ \n 1. Display all records + Bar Chart \n 2. Add record \n 3. Modify record(s) \n 4. Delete record(s) \n
+~INSIGHTS~ \n 5. Show Insights \n 6. Distribution by MHI fields \n 7. MHI by Fields \n 8. Exit""")
     try:
       choice = int(input("Enter your choice: "))
     except (ValueError, TypeError):
         print("Invalid input. ⚠️ Enter choice number: ")
         continue
-    menu = {1: disp_all, 2: add_rec, 3: modify_rec, 4: delete_rec, 5: avg_w_mhi, 6: count_w_mhi, 7: mhi_by_fields, 8: dist_by_fields}
-    if choice == 9:
-        break   
-    elif choice == 8:
-        menu[choice](filename)
+    menu = {1: disp_all, 2: add_rec, 3: modify_rec, 4: delete_rec, 5: insights, 6: mhi_by_fields, 7: dist_by_fields }
+    if choice == 8:
+        break
     elif choice in menu:
-        try:
-            menu[choice]()
-        except Exception as e:
-            print("Error:", e)
+        menu[choice]()
